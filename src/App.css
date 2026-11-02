@@ -32,6 +32,12 @@ body {
   margin: 10px 0;
 }
 
+.dashboard-header h3 {
+  font-size: 19px;
+  margin: 24px 0 0;
+  color: #6366f1;
+}
+
 .dashboard-header p {
   color: #85899a;
   font-size: 15px;
@@ -76,7 +82,8 @@ body {
 .experiment-text p {
   color: #65697a;
   font-size: 15px;
-  margin: 0 0 16px;
+  margin: 0 0 10px;
+  line-height: 1.2;
 }
 
 .experiment-text h3 {
