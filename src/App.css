@@ -102,3 +102,24 @@ body {
   font-size: 14px;
   margin: 0 0 22px;
 }
+
+.site-footer {
+  margin-top: 60px;
+  padding: 24px 0;
+  border-top: 1px solid #e8e9ef;
+  text-align: center;
+  color: #85899a;
+  font-size: 13px;
+}
+
+.site-footer a {
+  color: #6366f1;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}

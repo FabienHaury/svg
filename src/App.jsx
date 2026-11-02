@@ -286,6 +286,18 @@ export default function App() {
         </p>
       </section>
 
+      <footer className="site-footer">
+        <span>
+          Fabien Haury 2026 for{" "}
+          <a
+            href="https://www.react-graph-gallery.com/react-d3-dataviz-course"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            react-d3-dataviz-course
+          </a>
+        </span>
+      </footer>
 
     </main>
   );
