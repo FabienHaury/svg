@@ -1,0 +1,33 @@
+.enhanced-exploded-pie-chart {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    overflow: visible;
+}
+
+.slice-star {
+    fill: white;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    pointer-events: none;
+    user-select: none;
+}
+
+.chart-label {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    fill: #343746;
+    pointer-events: none;
+}
+
+.slice-percentage {
+    fill: white;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    pointer-events: none;
+    user-select: none;
+}

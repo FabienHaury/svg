@@ -1,0 +1,38 @@
+.enhanced-pie-chart {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    overflow: visible;
+}
+
+.enhanced-pie-slice {
+    cursor: pointer;
+    transition: opacity 150ms ease, filter 150ms ease;
+}
+
+.enhanced-pie-slice:hover,
+.enhanced-pie-slice.is-hovered {
+    filter: brightness(1.12);
+}
+
+.pie-percentage-tooltip rect {
+    fill: #171923;
+    stroke: white;
+    stroke-width: 1.5px;
+}
+
+.pie-percentage-tooltip text {
+    fill: white;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.chart-label {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    fill: #343746;
+    pointer-events: none;
+}

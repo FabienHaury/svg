@@ -1,0 +1,15 @@
+.pie-chart {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    overflow: visible;
+}
+
+.chart-label {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    fill: #343746;
+    pointer-events: none;
+}

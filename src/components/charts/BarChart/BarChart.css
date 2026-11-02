@@ -1,0 +1,37 @@
+.bar-chart {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    overflow: visible;
+}
+
+.bar-grid-line {
+    stroke: #e8e9ef;
+    stroke-width: 1;
+}
+
+.bar-axis-line {
+    stroke: #a1a1aa;
+    stroke-width: 1;
+}
+
+.bar-axis-label {
+    fill: #85899a;
+    font-size: 11px;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.bar-value-label {
+    fill: #343746;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.bar-category-label {
+    fill: #343746;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Inter, system-ui, sans-serif;
+}

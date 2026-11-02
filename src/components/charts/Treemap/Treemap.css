@@ -1,0 +1,22 @@
+.treemap-chart {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.treemap-category-label {
+    fill: #171923;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.treemap-value-label {
+    fill: #171923;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    pointer-events: none;
+}

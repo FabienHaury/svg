@@ -1,0 +1,39 @@
+.enhanced-donut-chart {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    overflow: visible;
+}
+
+.enhanced-donut-slice {
+    cursor: pointer;
+    transition: opacity 150ms ease, filter 150ms ease;
+}
+
+.enhanced-donut-slice:hover,
+.enhanced-donut-slice.is-hovered {
+    filter: brightness(1.12);
+}
+
+.donut-percentage {
+    fill: #171923;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.donut-category {
+    fill: #85899a;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.chart-label {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    fill: #343746;
+    pointer-events: none;
+}

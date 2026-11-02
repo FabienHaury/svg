@@ -1,0 +1,28 @@
+.chart-card {
+    background: white;
+    border: 1px solid #e8e9ef;
+    border-radius: 18px;
+    padding: 24px;
+    min-width: 0;
+}
+
+.chart-card-header h2 {
+    font-size: 19px;
+    margin: 0 0 6px;
+    color: #171923;
+}
+
+.chart-card-header p {
+    font-size: 13px;
+    color: #85899a;
+    margin: 0;
+}
+
+.chart-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    min-width: 0;
+    overflow: visible;
+}
