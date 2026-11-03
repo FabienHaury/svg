@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 
 import { chartData } from "./data/chartData";
+import { chartDataWrong } from "./data/chartDataWrong";
 
 import PieChart from "./components/charts/PieChart/PieChart";
 import DonutChart from "./components/charts/DonutChart/DonutChart";
@@ -26,20 +26,29 @@ export default function App() {
     <main className="dashboard">
       <header className="dashboard-header">
         <span className="eyebrow">DATA VISUALIZATION LAB</span>
+
         <h1>The Pie Chart Experiment</h1>
+
         <p>
-          Same data. Different visualizations. Different ways of telling the story.
+          Same data. Different visualizations. Different ways of
+          telling the story.
           <br />
           Let's see how they compare.
         </p>
+
         <p>
-          At first glance, they might all tell the same story.
-          But look a little closer: some make the data easier to understand,
-          while others make us work surprisingly hard.
+          Pie charts are familiar, simple, and everywhere. But they're
+          also one of the most debated forms of data visualization.
+          Comparing angles and areas isn't particularly easy, and
+          spotting small differences can quickly become a guessing game.
         </p>
-        <h3>
-          Let's put them to the test!
-        </h3>
+
+        <p>
+          So, are pie charts really as useful as we think?
+          Or are there better ways to tell the same story?
+        </p>
+
+        <h3>Let's put them to the test!</h3>
       </header>
 
       {/* CLASSIC CHARTS */}
@@ -54,21 +63,21 @@ export default function App() {
             title="Classic Pie Chart"
             description="The traditional approach."
           >
-            <PieChart data={chartData} />
+            <PieChart data={chartDataWrong} />
           </ChartCard>
 
           <ChartCard
             title="Donut Chart"
             description="A pie chart with a hole."
           >
-            <DonutChart data={chartData} />
+            <DonutChart data={chartDataWrong} />
           </ChartCard>
 
           <ChartCard
             title="Exploded Pie Chart"
             description="Individual slices separated."
           >
-            <ExplodedPieChart data={chartData} />
+            <ExplodedPieChart data={chartDataWrong} />
           </ChartCard>
         </div>
       </section>
@@ -78,29 +87,36 @@ export default function App() {
         <h2>Can you actually read these charts?</h2>
 
         <p>
-          Take a good look at the three visualizations.
-          Can you tell which category is the <strong>biggest</strong>?
-          Which is the <strong>smallest</strong>? Are any of them <strong>equal</strong>?
+          Take a good look at these three visualizations.
+          Can you identify the <strong>largest</strong> category?
+          The <strong>smallest</strong>?
+          Can you tell whether any categories have exactly the same value?
         </p>
 
         <p>
-          So, can you? With confidence? Not so easy, is it?
+          And more importantly, how confident are you in your answers?
         </p>
 
         <p>
-          That's one of the biggest problems with pie charts: they force us to estimate angles and compare areas.
-          Our eyes aren't particularly good at doing either accurately.
+          That's one of the main limitations of pie charts.
+          To compare categories, we have to estimate angles and
+          areas. Unfortunately, our eyes aren't particularly good
+          at making precise comparisons this way.
+        </p>
+
+        <p>
           Without labels or percentages, we're essentially guessing.
-          And when we're guessing, even small differences can be difficult to spot.
+          Small differences become difficult to spot, and categories
+          with similar values can be almost impossible to distinguish.
         </p>
 
         <p>
-          More importantly, this makes it surprisingly easy to create visualizations that look convincing but
-          don't accurately communicate the underlying data.
-          A slight change in proportions can completely change the impression a chart gives us.
+          There's another problem worth investigating:
+          a visualization can look perfectly convincing while
+          hiding something wrong with the underlying data.
         </p>
 
-        <h3>Something is wrong with these graphs. Can you guess what?</h3>
+        <h3>Something is wrong with these graphs. Can you spot it?</h3>
 
         <button
           className="reveal-button"
@@ -114,8 +130,9 @@ export default function App() {
             <h3>The numbers don't add up!</h3>
 
             <p>
-              A pie chart represents a whole.
-              Every slice is part of that whole, which means all the values must add up to exactly 100%.
+              A pie chart represents a whole. Every slice is a
+              proportion of that whole, which means the values
+              should add up to exactly 100%.
             </p>
 
             <p>
@@ -123,28 +140,41 @@ export default function App() {
             </p>
 
             <p>
-              So how can these charts still look perfectly normal?
+              So why does the pie chart still look perfectly normal?
             </p>
 
             <p>
-              D3 automatically normalizes the values when calculating the angles of the slices.
-              In other words, it adjusts their proportions to fit into a complete circle.
+              D3 calculates each slice's angle relative to the sum of all the supplied values.
+              It automatically distributes the slices across a complete circle,
+              regardless of whether the input values actually add up to 100%.
             </p>
 
             <p>
-              The result? A perfectly round pie chart hiding an imperfect dataset.
-              The visualization looks fine, but the underlying numbers tell a different story.
-              And that's an important lesson: a chart can look correct without the data behind it being correct.
-              Without labels or percentages, we might never notice the discrepancy.
+              In our case, the chart silently adjusts the proportions to fit a full 360° circle.
+              <br />
+              The result? A perfectly round pie chart hiding an inconsistent dataset.
             </p>
 
             <p>
-              A pie chart without labels or percentages can be about as informative as an empty plate after
-              someone's eaten the pie!
+              The chart looks perfectly fine, but the underlying
+              dataset is inconsistent.
+            </p>
+
+            <p>
+              And that's an important lesson: a <strong>visualization can
+                look correct without the data behind it being correct</strong>.
+              A beautiful chart doesn't automatically mean reliable
+              information.
+            </p>
+
+            <p>
+              A pie chart without labels or percentages can be about
+              as informative as an empty plate after someone's eaten
+              the pie!
             </p>
 
             <strong>
-              Never trust a visualization without questioning its data!
+              Always question the data before trusting the visualization!
             </strong>
           </div>
         )}
@@ -195,40 +225,46 @@ export default function App() {
 
         <p>
           We no longer have to rely entirely on visual estimation.
-          We can see the percentages, identify individual categories,
-          and get a much clearer idea of what the data represents.
+          Percentages make the values clearer, labels help identify
+          categories, and interactive elements give us additional
+          information on demand.
         </p>
 
         <p>
-          But there's something worth noticing.
-          <br />
-          We've added labels, hover effects, markers,
-          and extra visual elements just to make a relatively simple chart easier to read.
-          And even with all these improvements,
-          comparing two categories still means looking back and forth between slices.
+          But take a closer look. We've added labels, hover effects,
+          markers, and extra visual elements just to make a relatively
+          simple chart easier to interpret.
         </p>
 
         <p>
-          The donut chart gives us a convenient space to display additional information in its center.
-          The exploded pie chart makes individual values more visible.
-          Sure, these features make the charts more interactive and demonstrate what's possible with D3.
-          But do they actually make the data easier to understand?
+          And even with all these improvements, comparing two
+          categories still means looking back and forth between slices.
         </p>
 
         <p>
-          These are useful additions, but they don't fundamentally change how we compare the data.
-          We're still comparing angles and areas rather than positions along a common scale.
-          But here's the question:
+          The donut chart gives us a convenient space to display
+          additional information in its center. The exploded pie
+          chart makes individual slices more visually distinct.
+          These are interesting design choices, but do they
+          fundamentally improve our ability to compare values?
+        </p>
+
+        <p>
+          Not really. We're still comparing angles and areas rather
+          than positions along a common scale.
         </p>
 
         <h3>
-          So, did we really improve the pie chart, or did we just
+          Did we actually improve the pie chart, or did we just
           find ways to compensate for its weaknesses?
         </h3>
 
         <p>
           Perhaps the problem isn't the lack of information.
           Perhaps it's the visualization itself.
+        </p>
+
+        <p>
           Let's try something different.
         </p>
       </section>
@@ -238,7 +274,7 @@ export default function App() {
       <section className="chart-section">
         <h2>Alternatives</h2>
         <p className="section-description">
-          Same dataset. Completely different ways of looking at the information.
+          Same data. Different visualizations.
           <br />
           What happens when we stop trying to fit everything into a circle?
         </p>
@@ -273,71 +309,99 @@ export default function App() {
         <h2>Now that's more like it!</h2>
 
         <p>
-          Notice the difference? Much easier, isn't it? (Maybe not when the charts aren't properly scaled 😜)
+          Notice the difference? Much easier, isn't it?
+          (Well, assuming the charts are properly scaled 😜)
         </p>
 
         <p>
-          With a <strong>bar chart</strong>, comparing categories becomes much easier.
-          Every bar starts from the same baseline,
-          so our eyes can quickly identify the largest and smallest values.
-          Instead of estimating angles or comparing areas, we're simply comparing lengths.
-          And that makes a huge difference.
+          With a <strong>bar chart</strong>, comparing categories
+          becomes much easier. Every bar starts from a common
+          baseline, allowing our eyes to quickly identify the
+          largest and smallest values.
+        </p>
+
+        <p>
+          Instead of estimating angles or comparing areas,
+          we're simply comparing lengths along a shared scale.
+          This is something our eyes are much better at doing.
         </p>
 
         <p>
           What about the <strong>data table</strong>?
-          Sometimes, the best visualization is no visualization at all.
-          When precision matters, a table gives us exactly what we need: the original values, clearly presented and easy to compare.
-          No guessing. No estimating. Just the numbers.
+          Sometimes, the best visualization is no visualization
+          at all. When precision matters, a table gives us the
+          original values directly. No guessing, no estimating,
+          just the numbers.
         </p>
 
         <p>
-          The <strong>treemap</strong> offers another interesting perspective.
-          By representing categories as proportional rectangles,
-          it gives us an immediate sense of how much space each category occupies relative to the others.
-          It's visually appealing and useful for exploring part-to-whole relationships,
-          particularly when working with hierarchical data.
+          The <strong>treemap</strong> offers another perspective.
+          It represents categories using proportional rectangles,
+          making it easy to explore part-to-whole relationships.
+          It's particularly useful when working with hierarchical
+          data, where categories contain smaller subcategories.
         </p>
 
         <p>
-          There's another advantage worth mentioning: bar charts and tables can easily be sorted.
-          Want to find the largest category? Sort by <strong>value</strong>.
-          Looking for a particular category? Sort <strong>alphabetically</strong>.
-          Sorting options aren't included in these examples 😄
+          However, there's an important distinction:
+          comparing rectangular areas isn't necessarily as
+          accurate as comparing bar lengths. The treemap is
+          excellent for exploring proportions, but it isn't
+          always the best choice for precise comparisons.
         </p>
 
-        <p>Simple, intuitive, and effective.</p>
+        <p>
+          There's another advantage worth mentioning:
+          bar charts and tables can easily be sorted.
+        </p>
 
-        <h3>
-          So, do we really need a pie chart?
-        </h3>
+        <p>
+          Want to find the largest category? Sort by
+          <strong> value</strong>.
+          Looking for a particular category? Sort
+          <strong> alphabetically</strong>.
+          Sorting isn't included in these examples, though 😄
+        </p>
+
+        <p>
+          Simple, intuitive, and effective.
+        </p>
+
+        <h3>So, do we really need a pie chart?</h3>
 
         <p>
           Well, yes. Sometimes!
         </p>
 
         <p>
-          Pie charts aren't inherently bad. When we want to show how a small number of categories contribute to a meaningful whole,
-          they can provide a quick and familiar overview.
-          But when the goal is to compare individual values, identify small differences, or rank categories,
+          Pie charts aren't inherently bad. When showing how a
+          small number of categories contribute to a meaningful
+          whole, they can provide a quick and familiar overview.
+        </p>
+
+        <p>
+          But when the goal is to compare individual values,
+          identify small differences, or rank categories,
           other visualizations are often much more effective.
         </p>
 
         <p>
           The real lesson isn't that pie charts are evil.
-          It's that the <strong>best visualization isn't necessarily the most attractive one.
-            It's the one that communicates the data most clearly.</strong>
+          It's that the <strong>best visualization isn't
+            necessarily the most attractive one. It's the one
+            that communicates the data most clearly.</strong>
         </p>
 
         <p>
           Every chart has its strengths and weaknesses.
-          Understanding those differences helps us choose the right tool for the job.
-          And sometimes, the simplest solution really is the best one.
+          Understanding those differences helps us choose
+          the right tool for the job.
         </p>
 
         <p>
-          Because ultimately, data visualization isn't about making numbers look pretty.
-          It's about <strong>making information understandable</strong>.
+          Because ultimately, data visualization isn't about
+          making numbers look pretty.
+          It's about <strong>making information understandable.</strong>
         </p>
       </section>
 
@@ -354,6 +418,6 @@ export default function App() {
         </span>
       </footer>
 
-    </main>
+    </main >
   );
 }
