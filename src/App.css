@@ -130,3 +130,50 @@ body {
   color: #4f46e5;
   text-decoration: underline;
 }
+
+.answer-data-table {
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.answer-data-table th,
+.answer-data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.answer-data-table th:last-child,
+.answer-data-table td:last-child {
+  text-align: right;
+}
+
+.answer-data-table thead {
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.answer-data-table tfoot {
+  font-weight: bold;
+  border-top: 2px solid currentColor;
+}
+
+.answer-data-table tfoot th {
+  padding-top: 14px;
+}
+
+.category-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.category-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

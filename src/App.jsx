@@ -139,6 +139,46 @@ export default function App() {
               But our original dataset adds up to <strong>102%</strong>!
             </p>
 
+            <p>Here is the original dataset:</p>
+
+            <table className="answer-data-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {chartDataWrong.map((item) => (
+                  <tr key={item.label}>
+                    <td>
+                      <span
+                        className="category-label"
+                        style={{ color: item.color }}
+                      >
+                        <span
+                          className="category-dot"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        {item.label}
+                      </span>
+                    </td>
+                    <td>{item.value}%</td>
+                  </tr>
+                ))}
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <th>Total</th>
+                  <th>
+                    {chartDataWrong.reduce((sum, item) => sum + item.value, 0)}%
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+
             <p>
               So why does the pie chart still look perfectly normal?
             </p>
