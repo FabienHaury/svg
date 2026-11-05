@@ -8,15 +8,15 @@
 .treemap-category-label {
     fill: #171923;
     font-family: Inter, system-ui, sans-serif;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 600;
     pointer-events: none;
 }
 
 .treemap-value-label {
     fill: #171923;
     font-family: Inter, system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     pointer-events: none;
 }

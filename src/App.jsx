@@ -321,7 +321,7 @@ export default function App() {
 
         <div className="chart-grid">
           <ChartCard
-            title="Vertical Bar Chart"
+            title="Horizontal Bar Chart"
             description="Compare categories using a common baseline."
           >
             <BarChart data={chartData} />

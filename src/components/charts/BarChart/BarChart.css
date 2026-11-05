@@ -18,20 +18,20 @@
 
 .bar-axis-label {
     fill: #85899a;
-    font-size: 11px;
+    font-size: 13px;
     font-family: Inter, system-ui, sans-serif;
 }
 
 .bar-value-label {
     fill: #343746;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     font-family: Inter, system-ui, sans-serif;
 }
 
 .bar-category-label {
     fill: #343746;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 600;
     font-family: Inter, system-ui, sans-serif;
 }
